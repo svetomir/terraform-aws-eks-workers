@@ -19,31 +19,31 @@ output "eks_node_group_status" {
 }
 
 output "iam_role_arn" {
-    value       = aws_iam_role.main[0].arn
+    value       = aws_iam_role.main.*.arn
     description = "The Amazon Resource Name (ARN) specifying the role."
 }
 
 output "iam_role_create_date" {
-    value       = aws_iam_role.main[0].create_date
+    value       = aws_iam_role.main.*.create_date
     description = "The creation date of the IAM role."
 }
 
 output "iam_role_description" {
-    value       = aws_iam_role.main[0].description
+    value       = aws_iam_role.main.*.description
     description = "The description of the role."
 }
 
 output "iam_role_id" {
-    value       = aws_iam_role.main[0].id
+    value       = aws_iam_role.main.*.id
     description = "The name of the role."
 }
 
 output "iam_role_name" {
-    value       = aws_iam_role.main[0].name
+    value       = aws_iam_role.main.*.name
     description = "The name of the role."
 }
 
 output "iam_role_unique_id" {
-    value       = aws_iam_role.main[0].name
+    value       = aws_iam_role.main.*.name
     description = "The stable and unique string identifying the role."
 }
