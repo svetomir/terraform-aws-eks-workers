@@ -92,7 +92,7 @@ variable "kubernetes_version" {
 
 variable "force_detach_policies" {
     type        = bool
-    default     = false
+    default     = true
     description = "Specifies to force detaching any policies the role has before destroying it."
 }
 
