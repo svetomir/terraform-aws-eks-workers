@@ -1,19 +1,19 @@
-output "eks_node_group_arn" {
+output "node_group_arn" {
     value       = aws_eks_node_group.main.arn
     description = "Amazon Resource Name (ARN) of the EKS Node Group."
 }
 
-output "eks_node_group_id" {
+output "node_group_id" {
     value       = aws_eks_node_group.main.id
     description = "EKS Cluster name and EKS Node Group name separated by a colon (:)."
 }
 
-output "eks_node_group_resources" {
+output "node_group_resources" {
     value       = aws_eks_node_group.main.resources
     description = "List of objects containing information about underlying resources."
 }
 
-output "eks_node_group_status" {
+output "node_group_status" {
     value       = aws_eks_node_group.main.status
     description = "Status of the EKS Node Group."
 }
