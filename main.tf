@@ -50,9 +50,9 @@ resource "aws_iam_role" "main" {
     name                  = format("%s-eks-%s-node-group-role", var.cluster_name, var.node_group_name)
     assume_role_policy    = data.aws_iam_policy_document.main_assume_role_policy.json
     description           = format("Role for %s node group in the %s EKS cluster.", var.node_group_name, var.cluster_name)
-    force_detach_policies = var.force_detach_policies
-    path                  = var.path
-    permissions_boundary  = var.permissions_boundary
+    force_detach_policies = var.iam_role_force_detach_policies
+    path                  = var.iam_role_path
+    permissions_boundary  = var.iam_role_permissions_boundary
 
     tags = merge(
         var.tags,

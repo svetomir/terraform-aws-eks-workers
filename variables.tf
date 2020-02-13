@@ -90,19 +90,19 @@ variable "kubernetes_version" {
 
 # IAM
 
-variable "force_detach_policies" {
+variable "iam_role_force_detach_policies" {
     type        = bool
     default     = true
     description = "Specifies to force detaching any policies the role has before destroying it."
 }
 
-variable "path" {
+variable "iam_role_path" {
     type        = string
     default     = "/"
     description = "Path in which to create the group."
 }
 
-variable "permissions_boundary" {
+variable "iam_role_permissions_boundary" {
     type        = string
     default     = ""
     description = "The ARN of the policy that is used to set the permissions boundary for the role."
