@@ -19,31 +19,31 @@ output "node_group_status" {
 }
 
 output "iam_role_arn" {
-    value       = aws_iam_role.main.*.arn
+    value       = concat(aws_iam_role.main.*.arn, [""])[0]
     description = "The Amazon Resource Name (ARN) specifying the role."
 }
 
 output "iam_role_create_date" {
-    value       = aws_iam_role.main.*.create_date
+    value       = concat(aws_iam_role.main.*.create_date, [""])[0]
     description = "The creation date of the IAM role."
 }
 
 output "iam_role_description" {
-    value       = aws_iam_role.main.*.description
+    value       = concat(aws_iam_role.main.*.description, [""])[0]
     description = "The description of the role."
 }
 
 output "iam_role_id" {
-    value       = aws_iam_role.main.*.id
+    value       = concat(aws_iam_role.main.*.id, [""])[0]
     description = "The name of the role."
 }
 
 output "iam_role_name" {
-    value       = aws_iam_role.main.*.name
+    value       = concat(aws_iam_role.main.*.name, [""])[0]
     description = "The name of the role."
 }
 
 output "iam_role_unique_id" {
-    value       = aws_iam_role.main.*.name
+    value       = concat(aws_iam_role.main.*.unique_id, [""])[0]
     description = "The stable and unique string identifying the role."
 }
