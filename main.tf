@@ -94,7 +94,7 @@ resource "aws_iam_role_policy_attachment" "main_AmazonEC2ContainerRegistryReadOn
     policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
 }
 
-resource "aws_iam_role_policy_attachment" "main_AmazonEC2ContainerRegistryReadOnly" {
+resource "aws_iam_role_policy_attachment" "main_additional_policies" {
     count = var.node_role_arn == "" ? length(var.iam_role_attach_policies) : 0
 
     role       = aws_iam_role.main[0].name
