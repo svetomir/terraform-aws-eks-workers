@@ -95,8 +95,8 @@ resource "aws_iam_role_policy_attachment" "main_AmazonEC2ContainerRegistryReadOn
 }
 
 resource "aws_iam_role_policy_attachment" "main_additional_policies" {
-    count = var.node_role_arn == "" ? length(var.iam_role_attach_policies) : 0
+    count = var.node_role_arn == "" ? length(var.iam_role_additional_policies) : 0
 
     role       = aws_iam_role.main[0].name
-    policy_arn = element(var.iam_role_attach_policies, count.index)
+    policy_arn = element(var.iam_role_additional_policies, count.index)
 }
