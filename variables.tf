@@ -107,3 +107,9 @@ variable "iam_role_permissions_boundary" {
     default     = ""
     description = "The ARN of the policy that is used to set the permissions boundary for the role."
 }
+
+variable "iam_role_attach_policies" {
+    type        = list(string)
+    default     = []
+    description = "The ARNs of the policies to attach to the role. Following policies are already attached: AmazonEKSWorkerNodePolicy, AmazonEKS_CNI_Policy and AmazonEC2ContainerRegistryReadOnly."
+}
