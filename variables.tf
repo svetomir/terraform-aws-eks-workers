@@ -67,6 +67,15 @@ variable "release_version" {
     description = "AMI version of the EKS Node Group. Defaults to latest version for Kubernetes version."
 }
 
+variable "remote_access" {
+    type        = map(object({
+        ec2_ssh_key               = string
+        source_security_group_ids = list(string)
+    }))
+    default     = {}
+    description = "Key-value mapping of node remote access settings. EC2 Key Pair name that provides access for SSH communication with the worker nodes in the EKS Node Group. Set of EC2 Security Group IDs to allow SSH access (port 22) from on the worker nodes. If you specify ec2_ssh_key, but do not specify this configuration when you create an EKS Node Group, port 22 on the worker nodes is opened to the Internet (0.0.0.0/0)."
+}
+
 variable "tags" {
     type        = map(string)
     default     = {}
