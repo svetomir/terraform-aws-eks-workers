@@ -17,13 +17,6 @@ resource "aws_eks_node_group" "main" {
     release_version = var.release_version
     version         = var.kubernetes_version
 
-    remote_access {
-        count = var.ec2_ssh_key != "" ? 1 : 0
-        
-        ec2_ssh_key               = var.ec2_ssh_key
-        source_security_group_ids = var.source_security_group_ids
-    }
-
     tags = merge(
         var.tags,
         {"Name" = var.node_group_name}
