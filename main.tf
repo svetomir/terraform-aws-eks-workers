@@ -17,13 +17,9 @@ resource "aws_eks_node_group" "main" {
     release_version = var.release_version
     version         = var.kubernetes_version
 
-    dynamic "remote_access" {
-        for_each = var.remote_access
-
-        content {
-            ec2_ssh_key               = each.value.ec2_ssh_key
-            source_security_group_ids = each.value.source_security_group_ids
-        }
+    remote_access {
+        ec2_ssh_key               = var.ec2_ssh_key
+        source_security_group_ids = var.source_security_group_ids
     }
 
     tags = merge(
